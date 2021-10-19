@@ -177,9 +177,6 @@ class Cache {
 			throw new CacheException(__d('cake_dev', 'Cache engines must use %s as a base class.', 'CacheEngine'));
 		}
 		self::$_engines[$name] = new $cacheClass();
-		var_dump($cacheClass);
-		var_dump($config);
-		exit;
 		if (!self::$_engines[$name]->init($config)) {
 			throw new CacheException(__d('cake_dev', 'Cache engine %s is not properly configured.', $name));
 		}
