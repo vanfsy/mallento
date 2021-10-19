@@ -308,7 +308,6 @@ class Cache {
 		if (!$key || is_resource($value)) {
 			return false;
 		}
-        var_dump($config); var_dump($settings); var_dump($key); var_dump($value); exit;
 		$success = self::$_engines[$config]->write($settings['prefix'] . $key, $value, $settings['duration']);
 		self::set(null, $config);
 		if ($success === false && $value !== '') {
