@@ -23,7 +23,8 @@
  */
 
 // Setup a 'default' cache configuration for use in the application.
-Cache::config('default', array('engine' => 'File'));
+//Cache::config('default', array('engine' => 'File'));
+Cache::config('default', array('engine' => 'Apc'));
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
@@ -96,14 +97,16 @@ config('const');
 /**
  * Configures default file logging options
  */
+$engine = "SyslogLog";
+ 
 App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
-    'engine' => 'File',
+    'engine' => $engine,
     'types' => array('notice', 'info', 'debug'),
     'file' => 'debug',
 ));
 CakeLog::config('error', array(
-    'engine' => 'File',
+    'engine' => $engine,
     'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
     'file' => 'error',
 ));

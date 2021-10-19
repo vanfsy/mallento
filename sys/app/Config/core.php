@@ -32,6 +32,7 @@
  * In development mode, you need to click the flash message to continue.
  */
     Configure::write('debug', 0);
+    $engine = 'Apc';
     /* 20170806 add */
     Configure::write('Asset.timestamp', 'force');
 

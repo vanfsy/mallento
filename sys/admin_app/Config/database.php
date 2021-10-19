@@ -60,17 +60,25 @@
  * For Sql Server : http://msdn.microsoft.com/en-us/library/ms190356.aspx
  */
 class DATABASE_CONFIG {
-
-    public $default = array(
+	public $default = NULL;
+	
+    public $prod = array(
         'datasource' => 'Database/Mysql',
         'persistent' => false,
-        'host' => 'mysql508b.xserver.jp',
-        'login' => 'kamiken_yoshida',
+        'unix_socket' => '/cloudsql/mallento-329414:asia-northeast1:dbmallento',
+        'login' => 'root',
         'password' => 'solomon2021',
-        'database' => 'kamiken_mallento',
+        'database' => 'db_mallento',
         'prefix' => '',
         'encoding' => 'utf8',
     );
+    
+    
+    function __construct() {
+    	$this->default = $this->prod;
+    }
 
 }
+
+
 ?>
