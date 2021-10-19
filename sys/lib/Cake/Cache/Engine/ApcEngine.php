@@ -47,6 +47,11 @@ class ApcEngine extends CacheEngine {
 		}
 		$settings += array('engine' => 'Apc');
 		parent::init($settings);
+		try {
+		    var_dump(function_exists('apc_dec')); exit;
+        } catch (Exception $e) {
+		    var_dump($e->getMessage()); exit;
+        }
 		return function_exists('apc_dec');
 	}
 
