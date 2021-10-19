@@ -47,7 +47,6 @@ class ApcEngine extends CacheEngine {
 		}
 		$settings += array('engine' => 'Apc');
 		parent::init($settings);
-		var_dump('after_init'); exit;
 		return function_exists('apc_dec');
 	}
 
