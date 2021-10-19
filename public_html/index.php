@@ -19,6 +19,13 @@
  */
     define('PAGE_MANAGE', false);
 
+session_start();
+
+//Change the default TMP Folder path to a Cloud Storage Bucket
+//if(isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
+define('TMP', "gs://mallento-bucket/");
+//}
+
 /**
  * Use the DS to separate the directories in other defines
  */
